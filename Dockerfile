@@ -1,4 +1,5 @@
-FROM python:3.7.3-alpine3.9
+#FROM python:3.7.3-alpine3.9
+FROM  arm32v7/python:3.8.3-alpine3.11
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 RUN apk add --no-cache --virtual .build-deps binutils-gold curl g++ gcc gnupg libgcc linux-headers make libffi-dev openssl-dev \
         && rm -rf /var/cache/apk/*
